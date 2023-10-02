@@ -1,4 +1,4 @@
-# Boxplot en R
+# Boxplot en R 
 
 Es un script creado mientras aprendo R por lo que el código es completamente mejorable, pero lo dejo como ayuda para alguien como yo que esté comenzando y necesite una base o guía para sus proyectos.
 
