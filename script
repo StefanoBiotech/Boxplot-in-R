@@ -1,0 +1,91 @@
+###########################################################
+#Programa:    Boxplot 
+#Descripcion: Elaboracion de una tabla resumen de cada variable y su representacion grafica
+#Autor:       Stefano Simonetti
+#Notas:       Ninguna
+#########################################################
+
+# instalar paquete readr
+install.packages("readr")
+install_github("hadley/dplyr")
+install.packages("tidyverse")
+install.packages("readxl")
+install.packages("gapminder")
+install.packages("summarytools")
+install.packages("agricolae")
+install.packages("psych")
+install.packages("gtsummary")
+install.packages("gt")
+install.packages("kableExtra")
+install.packages("gtExtras")
+install.packages("ggplot2")
+install.packages("rcompanion")
+install.packages("modeest")
+install.packages("ggsummarystats")
+install.packages("rstatix", repos = "https://cloud.r-project.org")
+
+# cargar paquete 
+library(readr)
+library(dplyr)
+library(tidyverse)
+library(ggformula)
+library(readxl)
+library(gapminder)
+library(tidyverse)
+library(fdth)
+library(summarytools)
+library(agricolae)
+library(psych)
+library(gtsummary)
+library(gt)
+library(knitr)
+library(kableExtra)
+library(gtExtras)
+library(devtools)
+library(ggplot2)
+library(rcompanion)
+library(modeest)
+library(readxl)
+library(tidyverse)
+library(rstatix)
+library(ggpubr)
+library("RColorBrewer")
+
+## Crear vectores a partir de la base de datos bbdd.xlsx formarto excel. 
+
+bbdd <- read_xlsx("~/Documents/Tablas resumen/bbdd.xlsx")
+View(bbdd)
+
+as.numeric(bbdd$mpg)
+bbddmpg<- as.numeric(bbdd$mpg)
+class(bbddmpg)
+
+as.numeric(bbdd$sp)
+bbddsp<- as.numeric(bbdd$sp)
+class(bbddsp)
+
+as.numeric(bbdd$wt)
+bbddwt<- as.numeric(bbdd$wt)
+class(bbddwt)
+
+as.numeric(bbdd$vol)
+bbddvol<- as.numeric(bbdd$vol)
+class(bbddvol)
+
+as.numeric(bbdd$hp)
+bbddhp<- as.numeric(bbdd$hp)
+class(bbddhp)
+
+## Crear boxplot
+
+boxplot(bbddmpg, bbddsp, bbddwt, bbddvol, bbddhp, names=c("MPG", "SP", "WT", "VOL", "HP") , col=c("#B2182B","#D6604D","#F4A582","#FDDBC7", "#D1E5F0"),  
+                 main="BOXPLOT DE LAS VARIABLES",
+                 ylab=substitute(paste(bold('VALORES'))),
+                 xlab=substitute(paste(bold('VARIABLES'))),
+                                pch = 19
+                                 )  
+
+### Gradilla de fondo del boxplot. Correr codigo en conjunto con el del boxplot- 
+
+grid(nx=NULL, ny=NULL, col= "grey")
+
